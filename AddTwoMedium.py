@@ -15,13 +15,14 @@ class Solution(object):
         while l1 != None:
             if l1.val != 0:
                 if zeroSeen:
-                    sum += (l1.val * (10 * zeroC))
+                    sum1 += (l1.val * i)
                     zeroC = 0
                     zeroSeen = False
                 else:
                     sum1 += l1.val * i
             else:
                 zeroC += 1
+                zeroSeen = True
             i *= 10
             l1 = l1.next
 
@@ -29,19 +30,16 @@ class Solution(object):
 
             if l2.val != 0:
                 if zeroSeen:
-                    sum += (l2.val * (10 * zeroC))
+                    sum2 += (l2.val * (k))
                     zeroC = 0
                     zeroSeen = False
                 else:
-                    sum2 += l2.val * i
+                    sum2 += l2.val * k
             else:
                 zeroC += 1
+                zeroSeen = True
             k *= 10
             l2 = l2.next
-        print
-        sum1
-        print
-        sum2
         total = str(sum1 + sum2)[::-1]
         k = ListNode(0, None)
         h = k
@@ -51,11 +49,7 @@ class Solution(object):
                 print
                 k.next
                 k = k.next
-        print
-        k
         return h.next
-
-        00002
 
         """
         :type l1: ListNode
